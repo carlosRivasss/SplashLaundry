@@ -1,0 +1,232 @@
+<style>
+    /* Estilos generales */
+    html, body {
+        height: 100%; /* Esto asegura que el <body> pueda expandirse al 100% de la altura de la ventana */
+        margin: 0; /* Elimina los márgenes predeterminados */
+    }
+    body {
+        display: flex; /* Activa Flexbox */
+        flex-direction: column; /* Organiza los elementos hijos verticalmente */
+        min-height: 100vh; /* Usa al menos la altura completa de la ventana gráfica */
+    }
+    /* Estilos específicos para header, main y footer */
+    header {
+        /*flex: 2; /* 20% de la altura disponible, según la proporción */
+        background-color: #007bff; /* Color de fondo azul, similar a bg-primary */
+        color: white; /* Texto blanco */
+        text-align: center; /* Centra el texto */
+        padding: 10px; /* Espaciado interno */
+    }
+
+
+    /* Asegúrate de que el logo nunca sea más ancho que el contenedor */
+.logo {
+  max-width: 100%;
+  height: auto; /* Esto mantiene la relación de aspecto */
+}
+
+/* Para teléfonos en orientación horizontal */
+@media (max-width: 767px) and (orientation: landscape) {
+  .logo {
+    max-height:  150px; /* O el tamaño que prefieras */
+    width: auto; /* Esto mantiene la relación de aspecto */
+  }
+}
+
+
+    .btn-custom {   /* Es para los botones del menu */
+
+        display: inline-block;
+        width: 5%;
+        background-color: #17a2b8;
+        color: white; /* Mantiene el texto blanco */
+        text-decoration: none; /* Para cambiar el cursor y hacerlo parecer un botón */
+    }
+    @media (max-width: 576px) { /* o el punto de interrupción que prefieras */
+  .btn-custom {
+    font-size: 0.8rem; /* más pequeño en dispositivos móviles */
+    margin-bottom: 9rem;
+
+  }
+}
+
+.btn-custom:hover {
+  background-color: #4CAF50; /* Color de fondo cuando el mouse está sobre el botón */
+  color: white; /* Mantiene el texto blanco incluso en hover */
+  text-decoration: none;
+}
+
+.btn-custom:first-child {
+  margin-left: 2%; /* Ajusta este valor para obtener el espacio deseado */
+}
+.btn-custom:last-child {
+  margin-right: 10%; /* Ajusta este valor para obtener el espacio deseado */
+}
+
+
+main {
+        flex-grow: 1; /* 60% de la altura disponible, según la proporción */
+        text-align: center; /* Centra el texto */
+        padding: 20px; /* Espaciado interno */
+        position: relative;
+        overflow-y: auto;
+    }
+
+    .sobresaliente {
+      position: relative;
+      left: 12px; /* Margen izquierdo de 10px */
+      margin-top: -30px; /* Empuja el div hacia arriba en 20px */
+       margin-bottom: -45px;
+      width: calc(100% - 20px); /* Ancho ajustado para el margen */
+      height: calc(100% - 20px); /* Altura ajustada para el margen */
+      background-color: #EEEEEE;
+      z-index: 10;
+      box-sizing: border-box;
+      display: flex;
+    }
+
+    .imagen-lado {
+      flex: 1; /* Ocupa el espacio disponible */
+      display: flex;
+      justify-content: center;
+       /* Centra la imagen horizontalmente */
+    }
+    .contenido-texto {
+  flex: 1; /* Ocupa el espacio disponible */
+  padding-right: 20px; /* Espacio entre el texto y la imagen */
+  width: 80%;
+}
+
+
+
+@media (max-width: 768px) {
+  .contenido-texto img {
+    width: 100%; /* Hace que la imagen sea más ancha en pantallas más pequeñas */
+    overflow: hidden; /* Evita el desbordamiento horizontal */
+  }
+}
+
+
+.carousel-item img {
+  width: 50%; /* Ajusta la imagen al 100% del ancho del contenedor */
+  height: 50px; /* La altura se ajustará automáticamente para mantener el aspecto */
+  object-fit: cover; /* Esto asegurará que la imagen cubra el área sin deformarse */
+}
+
+.sobresaliente h6 {
+  color: #265073;
+  font-style: italic;
+  text-align: center; /* Esto centra el texto */
+  margin: 0 auto; /* Esto podría ayudar a centrar el texto si está en un contenedor más grande */
+  display: block; /* Asegura que el h5 sea tratado como un bloque, lo que permite el centrado */
+  max-width: 80%; /* Ajusta esto para controlar el ancho del texto */
+}
+
+p1{color: #265073;
+font-style: italic;
+text-align: center;}
+
+p7{p1{color: white;
+font-style: italic;
+text-align: center;
+font-size: 12pt;
+}}
+
+.carrusel-imagen {
+  width: 100%; /* Ajusta el ancho al contenedor */
+  height: 400px; /* Altura fija */
+  object-fit: cover; /* Cubre el área sin deformar la imagen */
+}
+
+    footer {
+      /*  flex: 2; /* 20% de la altura disponible, según la proporción */
+        background-color: #343a40; /* Color de fondo oscuro, similar a bg-dark */
+        color: white; /* Texto blanco */
+        text-align: center; /* Centra el texto */
+        padding: 20px; /* Espaciado interno */
+        margin-top: 20px;
+    }
+</style>
+
+/* Remove all previous inline styles that might interfere */
+header img,
+header div {
+    all: unset;
+}
+
+/* Ensure that header images have a consistent size */
+header img {
+    max-height: 150px;
+    max-width: 100%;
+}
+
+/* Additional styles for centering the navigation items */
+.bg-warning {
+    padding: 0;
+}
+
+.row.text-center {
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* Ensure that header titles are also centered and have appropriate margins */
+header > div:not(.bg-warning) {
+    text-align: center;
+}
+
+header h1,
+header h5 {
+    margin: 0.5rem;
+}
+
+/* Modify the navbar for larger screens */
+@media (min-width: 768px) {
+    .btn-custom {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+}
+
+@media (max-width: 767px) {
+  .navbar-collapse {
+    flex-wrap: nowrap; /* Previene el ajuste de línea para asegurar que todos los elementos del menú se muestren en una sola fila */
+    overflow-x: auto; /* Permite desplazamiento horizontal en caso de que los elementos no quepan */
+  }
+  .nav-item {
+    flex-shrink: 0; /* Evita que los elementos del menú se encojan más de lo necesario */
+  }
+}
+/* These styles are for the footer elements, assuming the user might want them to match the header */
+footer img {
+    max-height: 30px;
+    max-width: 50%;
+    margin: 0 30px;
+}
+
+footer a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer-text {
+  display: none; /* Oculta el texto en dispositivos pequeños */
+}
+@media (min-width: 768px) { /* Ajusta según tus puntos de corte específicos */
+  .footer-text {
+    display: inline; /* Muestra el texto en dispositivos grandes */
+  }
+}
+footer p7 {
+    display: inline;
+}
+
+.icono-lista {
+  width: 25px; /* O el tamaño que desees para tus íconos */
+  margin-right: 10px; /* Espacio entre el ícono y el texto */
+  justify-content: center;
+
+}
